@@ -30,7 +30,56 @@ let canvas = Canvas(width: 400, height: 600)
 let lightGrey = Color(hue: 84, saturation: 6, brightness: 88, alpha: 100)
 let deepRed = Color(hue: 7, saturation: 97, brightness: 72, alpha: 100)
 
-// Begin your solution here... 
+// Begin your solution here...
+
+//background rectangle
+canvas.fillColor = lightGrey
+canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 400, height: 600)
+
+canvas.textColor = deepRed
+
+var subTextYPosition = 505
+
+canvas.drawText(message: """
+straight music presents
+the undertones
+
+with special guests
+the chords
+""", size: 11, x: 15, y: subTextYPosition, kerning: -0.25)
+
+
+//set origin
+canvas.translate(byX: 14, byY: 390)
+
+//write undertone
+
+for toneAlpha in stride(from: 100, to: 0, by: -5) {
+    
+    canvas.textColor = Color.init(hue: 0, saturation: 0, brightness: 0, alpha: toneAlpha)
+    
+    canvas.drawText(message: "undertones", size: 70, x: 0, y: -30, kerning: 0)
+    
+    canvas.rotate(by: -4.736842105263158)
+    
+}
+
+
+
+canvas.translate(byX: -14, byY: -390)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*:
  **Remember to commit and push your work,please**.
